@@ -1,7 +1,13 @@
 #include <iostream>
 #include <string>
 
-#include <Node.h>
+template <class SearchKeyType, class DataType>
+struct DataEntry {
+    SearchKeyType searchKey;
+    DataType* rid;
+
+    DataEntry(SearchKeyType searchKeyIn, DataType* ridIn) : searchKey(searchKeyIn), rid(ridIn) {};
+};
 
 class BPlusTree {
 public:

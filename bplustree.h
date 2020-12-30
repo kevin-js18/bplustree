@@ -1,12 +1,16 @@
 #include <iostream>
 #include <string>
 
-template <class SearchKeyType, class DataType>
-struct DataEntry {
-    SearchKeyType searchKey;
-    DataType* rid;
+struct Node {
+    Node* parent;
+};
 
-    DataEntry(SearchKeyType searchKeyIn, DataType* ridIn) : searchKey(searchKeyIn), rid(ridIn) {};
+struct TreeNode : Node {
+    
+};
+
+struct LeafNode : Node {
+
 };
 
 class BPlusTree {

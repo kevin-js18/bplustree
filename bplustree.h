@@ -13,7 +13,7 @@ template <class KeyT, class DataT>
 class BPlusTree {
 public:
     BPlusTree(bool hasDuplicatesIn) {
-        
+
     }
 
     void insertKeyVal(KeyT key, DataT &data) {
@@ -40,7 +40,9 @@ public:
 
     }
 
-    ~BPlusTree();
+    ~BPlusTree() {
+
+    }
 private:
     bool hasDuplicates;
     int order;

@@ -21,8 +21,8 @@ int main() {
 
     BPlusTree<int, ResultSetSim> intTree(true);
     BPlusTree<std::string, ResultSetSim> stringTree(true);
-    BPlusTree<int, ResultSetSim> charTree(false);
-    BPlusTree<std::string, ResultSetSim> stringTree(false);
+    BPlusTree<int, ResultSetSim> intTreeNoDupl(false);
+    BPlusTree<std::string, ResultSetSim> stringTreeNoDupl(false);
 
     return 0;
 }

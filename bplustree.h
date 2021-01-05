@@ -12,7 +12,9 @@ struct BNode {
 template <class KeyT, class DataT>
 class BPlusTree {
 public:
-    BPlusTree();
+    BPlusTree(bool hasDuplicatesIn) {
+        
+    }
 
     void insertKeyVal(KeyT key, DataT &data) {
 
@@ -40,6 +42,8 @@ public:
 
     ~BPlusTree();
 private:
+    bool hasDuplicates;
+    int order;
     BNode* root;
 };
 

@@ -19,10 +19,8 @@ int main() {
         resultSet.rows.push_back(row);
     }
 
-    BPlusTree<int, ResultSetSim> intTree(true);
-    BPlusTree<std::string, ResultSetSim> stringTree(true);
-    BPlusTree<int, ResultSetSim> intTreeNoDupl(false);
-    BPlusTree<std::string, ResultSetSim> stringTreeNoDupl(false);
+    BPlusTree<int, ResultSetSim> intTree;
+    BPlusTree<char*, ResultSetSim> stringTree;
 
     return 0;
 }

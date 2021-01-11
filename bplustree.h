@@ -5,11 +5,8 @@
 #include <string>
 #include <type_traits>
 #include <vector>
-#include "params.h"
 
-struct BNode {
-    unsigned char data[PAGE_SIZE_IN_BYTES];
-};
+#include "bnode.h"
 
 template <class KeyT, class DataT>
 class BPlusTree {
@@ -20,8 +17,8 @@ public:
         pointerSize = sizeof(void*);
         dataEntrySize = searchKeySize + pointerSize;
 
-        maxFanout = (PAGE_SIZE_IN_BYTES - 3*(static_cast<uint32_t>(sizeof(void*)))) 
-                    / static_cast<uint32_t>(sizeof(KeyT) + sizeof(void*));
+        maxFanout = (PAGE_SIZE_IN_BYTES - 3*(pointerSize) - sizeof(size_t)) 
+                    / (searchKeySize + pointerSize);
 
         assert(maxFanout > 0);
 

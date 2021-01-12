@@ -14,11 +14,10 @@ public:
     BPlusTree() {
         static_assert(std::is_trivially_copyable<KeyT>::value, "Invalid key type");
         searchKeySize = sizeof(KeyT);
-        pointerSize = sizeof(void*);
-        dataEntrySize = searchKeySize + pointerSize;
+        dataEntrySize = searchKeySize + POINTER_SIZE_IN_BYTES;
 
-        maxFanout = (PAGE_SIZE_IN_BYTES - 3*(pointerSize) - sizeof(size_t)) 
-                    / (searchKeySize + pointerSize);
+        maxFanout = (PAGE_SIZE_IN_BYTES - 3*(POINTER_SIZE_IN_BYTES) - SIZE_T_SIZE_IN_BYTES) 
+                    / (searchKeySize + POINTER_SIZE_IN_BYTES);
 
         assert(maxFanout > 0);
 

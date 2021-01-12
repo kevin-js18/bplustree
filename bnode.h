@@ -4,11 +4,15 @@
 
 class BNode {
 public:
+    BNode();
+
     virtual void handleOverflow() = 0;
 
     virtual void handleSparseNode() = 0;
 
     void getParentPointer(unsigned char* buffer);
+
+    void setParentPointer(unsigned char* buffer);
 
     size_t findSearchKeyIndex(unsigned char* buffer);
 
@@ -24,6 +28,10 @@ public:
 
     ~TreeBNode();
 
+    virtual void handleOverflow();
+
+    virtual void handleSparseNode();
+
     void getNthSearchKey(size_t index, unsigned char* buffer);
 
     void getNthChildPointer(size_t index, unsigned char* buffer);
@@ -38,6 +46,10 @@ public:
     LeafBNode();
 
     ~LeafBNode();
+
+    virtual void handleOverflow();
+
+    virtual void handleSparseNode();
 
     void getNthDataEntry(size_t index, unsigned char* buffer);
 

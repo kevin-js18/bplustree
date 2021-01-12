@@ -7,7 +7,7 @@ compileTest: ${OBJS}
 compileTest.o: compileTest.cpp bplustree.h
 	${CC} -c compileTest.cpp
 
-bnode.o: bnode.cpp bnode.h params.h
+bnode.o: bnode.cpp bnode.h bnode_params.h global_params.h
 	${CC} -c bnode.cpp
 
 .PHONY: clean

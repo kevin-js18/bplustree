@@ -1,6 +1,6 @@
 #ifndef _BNODE_H_
 
-#include "params.h"
+#include "bnode_params.h"
 
 class BNode {
 public:
@@ -16,10 +16,10 @@ public:
 
     size_t findSearchKeyIndex(unsigned char* buffer);
 
-    size_t getSearchKeyCount();
+    size_t getElementCount();
 
 private:
-    unsigned char data[PAGE_SIZE_IN_BYTES];
+    unsigned char nodeData[PAGE_SIZE_IN_BYTES];
 };
 
 class TreeBNode : public BNode {

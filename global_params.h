@@ -1,4 +1,4 @@
-#ifndef _PARAMS_H_
+#ifndef _GLOBAL_PARAMS_H_
 
 #include "stddef.h"
 

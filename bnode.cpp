@@ -1,7 +1,11 @@
+#include <cstring>
+
 #include "bnode.h"
 
 BNode::BNode() {
-
+    size_t initialSize = 0;
+    unsigned char* sizeBuffer = reinterpret_cast<unsigned char*>(&initialSize);
+    memcpy(nodeData, sizeBuffer, SIZE_T_SIZE_IN_BYTES);
 }
 
 TreeBNode::TreeBNode() {
@@ -25,7 +29,7 @@ LeafBNode::LeafBNode() {
 }
 
 LeafBNode::~LeafBNode() {
-    
+
 }
 
 void LeafBNode::handleOverflow() {

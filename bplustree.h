@@ -24,7 +24,7 @@ public:
 
         minOccupancy = ceil(maxFanout / 2);
 
-        root = new BNode;
+        root = new TreeBNode;
     }
 
     void insertKeyVal(KeyT key, DataT &data) {
